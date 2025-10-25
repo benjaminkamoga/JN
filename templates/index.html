@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JN Medical Lab & Equipment Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- 🩺 Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="/">
+            <img src="{{ url_for('static', filename='images/logo/jn_logo.png') }}" alt="JN Medical Logo" height="50" class="me-2">
+            JN Medical Lab & Equipment Store
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="/products" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 🌄 Hero Carousel -->
+<section class="mt-3">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+        <div class="carousel-inner rounded shadow-sm">
+            {% for image in images %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <img src="{{ url_for('static', filename=image.split('static/')[-1]) }}" class="d-block w-100" style="height: 550px; object-fit: cover;" alt="JN Medical Image">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5 class="fw-bold">Reliable Medical Solutions for Every Facility</h5>
+                        <p>Supplying high-quality, TMDA-compliant medical and laboratory equipment across the Southern Zone of Tanzania.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- 💬 Welcome Message -->
+<section class="py-5 text-center bg-light">
+    <div class="container">
+        <h2 class="fw-bold text-primary">Welcome to JN Medical Lab & Equipment Store</h2>
+        <p class="lead text-muted mt-3">
+            We improve the wellness of our community by supplying innovative and high-quality medical equipment,
+            laboratory devices, protective uniforms, and pharmaceuticals across Tanzania.
+        </p>
+    </div>
+</section>
+
+<!-- 💡 What We Do -->
+<section class="py-5">
+    <div class="container">
+        <h3 class="text-center fw-bold mb-5 text-primary">What We Do</h3>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">Pharmaceutical & Equipment Retail</h5>
+                        <p class="card-text">We stock a wide range of pharmaceuticals, medical devices, and lab supplies for hospitals and clinics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">Wholesale Distribution</h5>
+                        <p class="card-text">Supplying reliable, affordable, and TMDA-certified medical equipment across the Southern Zone Regions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">Pharmacist Consultation</h5>
+                        <p class="card-text">Providing professional advice on proper medication use and selection of quality healthcare devices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">Storage & Transport</h5>
+                        <p class="card-text">Safe and reliable storage and delivery of pharmaceuticals and medical devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ⭐ Why Choose Us -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-5 text-primary">Why Choose Us</h3>
+        <div class="row g-4">
+            <div class="col-md-2"><h5>✅ Quality Products</h5></div>
+            <div class="col-md-2"><h5>🚚 Timely Delivery</h5></div>
+            <div class="col-md-2"><h5>🤝 Reliable Service</h5></div>
+            <div class="col-md-2"><h5>💬 Customer Support</h5></div>
+            <div class="col-md-2"><h5>📦 TMDA Compliance</h5></div>
+            <div class="col-md-2"><h5>💡 Innovation</h5></div>
+        </div>
+    </div>
+</section>
+
+<!-- 📞 Footer -->
+<footer class="bg-dark text-white py-4 text-center">
+    <img src="{{ url_for('static', filename='images/logo/jn_logo.png') }}" alt="JN Medical Logo" height="40" class="mb-2">
+    <p class="mb-1 fw-bold">JN Medical Lab & Equipment Store</p>
+    <p class="mb-0">📍 Ruvuma, Tanzania | ☎ 0768 731 597 | ✉ JN_MedicalSupplies@gmail.com</p>
+    <p class="small mt-2">Reliable Medical Solutions for Every Facility</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9fafc;
+}
+
+/* Hero Banner */
+.hero {
+    background: url('/static/images/hero-bg.jpg') center/cover no-repeat;
+    height: 60vh;
+}
+.hero h1 {
+    font-size: 2.5rem;
+}
+.hero p {
+    font-size: 1.1rem;
+}
+
+/* Carousel */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+.carousel-caption h5 {
+    font-weight: bold;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}

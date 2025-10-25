@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JN Medical Lab & Equipment Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo/jn_logo.png') }}" alt="JN Medical Logo" height="50" class="me-2">
+            JN Medical Lab & Equipment Store
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link active">About Us</a></li>
+                <li class="nav-item"><a href="{{ url_for('products') }}" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Banner -->
+<section class="py-5 text-center bg-primary text-white">
+    <div class="container">
+        <h1 class="fw-bold">About JN Medical Lab & Equipment Store</h1>
+        <p class="lead mt-3">Reliable Medical Solutions for Every Facility</p>
+    </div>
+</section>
+
+<!-- Company Overview / Our Story -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold text-primary mb-4">Our Story</h2>
+        <p class="text-center text-muted mb-4">
+            JN Medical Lab & Equipment Store was founded to address the growing need for reliable, high-quality medical equipment, laboratory devices, and protective uniforms in the Southern Zone of Tanzania. We are built on a foundation of professional expertise, dedication, and a strong commitment to supporting hospitals, clinics, and healthcare providers with timely delivery and exceptional service.
+        </p>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-6 mb-4">
+                <h5 class="fw-bold text-primary">Our Mission</h5>
+                <p>To improve healthcare delivery across Tanzania by providing high-quality medical equipment, laboratory devices, and protective uniforms, while ensuring timely delivery, exceptional customer service, and reliable support for hospitals, clinics, and healthcare providers.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h5 class="fw-bold text-primary">Our Vision</h5>
+                <p>To be a trusted and dependable leader in the supply of quality medical equipment, laboratory devices, and protective uniforms across the Southern Zone and throughout Tanzania, committed to meeting the growing needs of hospitals, clinics, and healthcare providers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold text-primary mb-5">Our Core Values</h2>
+        <div class="row row-cols-1 row-cols-md-5 g-4 justify-content-center">
+
+            <div class="col">
+                <div class="card text-white bg-primary h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-2">✔️</div>
+                        <h5 class="card-title fw-bold">Quality Assurance</h5>
+                        <p class="card-text">We deliver only approved and tested medical products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-white bg-success h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-2">🛡️</div>
+                        <h5 class="card-title fw-bold">Integrity</h5>
+                        <p class="card-text">We uphold honesty and transparency in all our dealings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-white bg-warning h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-2">👥</div>
+                        <h5 class="card-title fw-bold">Customer Focus</h5>
+                        <p class="card-text">We listen to and prioritize our clients’ unique needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-white bg-danger h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-2">⏱️</div>
+                        <h5 class="card-title fw-bold">Reliability</h5>
+                        <p class="card-text">We ensure consistent availability and timely delivery.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-white bg-info h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-2">💼</div>
+                        <h5 class="card-title fw-bold">Professionalism</h5>
+                        <p class="card-text">We operate with efficiency, ethics, and accountability.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Organization Structure Image -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="text-center fw-bold text-primary mb-5">Our Organization Structure</h2>
+        <img src="{{ url_for('static', filename='images/org_structure/org.png') }}" alt="Organization Structure" class="img-fluid shadow-sm">
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold text-primary mb-5">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-2"><h5>✅ Quality Products</h5></div>
+            <div class="col-md-2"><h5>🚚 Timely Delivery</h5></div>
+            <div class="col-md-2"><h5>🤝 Reliable Service</h5></div>
+            <div class="col-md-2"><h5>💬 Excellent Support</h5></div>
+            <div class="col-md-2"><h5>📦 Wide Range of Equipment</h5></div>
+            <div class="col-md-2"><h5>💡 Innovation & Improvement</h5></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 text-center">
+    <img src="{{ url_for('static', filename='images/logo/jn_logo.png') }}" alt="JN Medical Logo" height="40" class="mb-2">
+    <p class="mb-1 fw-bold">JN Medical Lab & Equipment Store</p>
+    <p class="mb-0">📍 Ruvuma, Tanzania | ☎ 0768 731 597 | ✉ JN_MedicalSupplies@gmail.com</p>
+    <p class="small mt-2">Reliable Medical Solutions for Every Facility</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - JN Medical Lab & Equipment Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .contact-btns a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo/jn_logo.png') }}" alt="JN Medical Logo" height="50" class="me-2">
+            JN Medical Lab & Equipment Store
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="{{ url_for('products') }}" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Banner -->
+<section class="py-5 text-center bg-primary text-white">
+    <div class="container">
+        <h1 class="fw-bold">Contact Us</h1>
+        <p class="lead mt-3">We’re here to help with your medical equipment needs</p>
+    </div>
+</section>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="container mt-3">
+      {% for category, msg in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<!-- Contact Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Contact Info -->
+            <div class="col-md-5">
+                <h3 class="fw-bold text-primary mb-4">Get in Touch</h3>
+                <p class="mb-3"><strong>Address:</strong> Ruvuma, Tanzania</p>
+                <p class="mb-3"><strong>Phone:</strong> 0768 731 597</p>
+                <p class="mb-3"><strong>Email:</strong> <a href="mailto:benjaminkamoga44@gmail.com">benjaminkamoga44@gmail.com</a></p>
+
+                <!-- Clickable Buttons -->
+                <div class="contact-btns mb-4">
+                    <a href="https://www.instagram.com/potential_studio255?igsh=MWY0YnV6YTJ4dXNwMA%3D%3D&utm_source=qr" target="_blank" class="btn btn-danger">
+                        📸 Instagram
+                    </a>
+                    <a href="https://wa.me/255623030411" target="_blank" class="btn btn-success">
+                        💬 WhatsApp
+                    </a>
+                    <p class="small mt-2">Click the buttons to visit our social pages</p>
+                </div>
+
+                <p>Feel free to reach out to us with any inquiries or support requests. We aim to respond within 24 hours.</p>
+
+                <!-- Optional Google Map -->
+                <div class="mt-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-7">
+                <h3 class="fw-bold text-primary mb-4">Send Us a Message</h3>
+                <form action="{{ url_for('contact') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="John Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 text-center">
+    <img src="{{ url_for('static', filename='images/logo/jn_logo.png') }}" alt="JN Medical Logo" height="40" class="mb-2">
+    <p class="mb-1 fw-bold">JN Medical Lab & Equipment Store</p>
+    <p class="mb-0">📍 Ruvuma, Tanzania | ☎ 0768 731 597 | ✉ benjaminkamoga44@gmail.com</p>
+    <p class="small mt-2">Reliable Medical Solutions for Every Facility</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
