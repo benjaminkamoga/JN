@@ -71,7 +71,7 @@ def contact():
         return redirect(url_for('contact'))
     return render_template('contact.html')
 
-    @app.route('/healthz')
+@app.route('/healthz')
 def health_check():
     return "OK", 200
 
